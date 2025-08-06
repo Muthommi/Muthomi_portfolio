@@ -9,6 +9,6 @@ export default function Resume() {
       >
         Download my CV
       </a>
-    </a>
+    </section>
   );
 }
