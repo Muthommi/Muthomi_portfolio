@@ -9,7 +9,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [darkMode]);
 
   return (
@@ -32,7 +36,7 @@ function App() {
 	  </button>
 	</header>
 
-	<main classname="space-y-12 p-6 max-w-4xl mx-auto">
+	<main className="space-y-12 p-6 max-w-4xl mx-auto">
 	  <About />
 	  <Projects />
 	  <Resume />
@@ -40,7 +44,7 @@ function App() {
 	</main>
 
 	<footer className="p-4 text-center text-sm text-gray-500 dark:text-gray-400">
-	  &copy: Muthomi {new Date().getFullYear()}
+	  &copy; Muthomi {new Date().getFullYear()}
 	</footer>
       </div>
     </>

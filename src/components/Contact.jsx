@@ -10,7 +10,7 @@ export default function Contact() {
         <a href="https://github.com/Muthommi" target="_blank" rel="noreferrer">
           <FaGithub className="hover:text-blue-500" />
         </a>
-        <a href="www.linkedin.com/in/martin-kelvin-muthomi" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/martin-kelvin-muthomi" target="_blank" rel="noreferrer">
           <FaLinkedin className="hover:text-blue-500" />
         </a>
       </div>
