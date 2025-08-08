@@ -1,4 +1,4 @@
-import {FaSun, FaMoon } from 'ewct-icons/fa';
+import {FaSun, FaMoon } from 'react-icons/fa';
 
 export default function ThemeToggle({ darkMode, toggleDarkMode }) {
   return (
