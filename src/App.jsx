@@ -1,18 +1,21 @@
-import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import About from './components/About';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
+import { useState, useEffect } from 'react'
+import { Helmet } from 'react-helmet'
+
+import Navbar from './components/Navbar'
+import About   from './components/About'
+import Projects from './components/Projects'
+import Resume  from './components/Resume'
+import Contact from './components/Contact'
+import Footer  from './components/Footer'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     darkMode
       ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark');
-  }, [darkMode]);
+      : document.documentElement.classList.remove('dark')
+  }, [darkMode])
 
   return (
     <>
@@ -39,46 +42,34 @@ function App() {
         transition-colors duration-300
         font-sans
       ">
-        <header className="
-          flex items-center justify-between
-          p-6
-          border-b border-primary dark:border-secondary
-        ">
-          <h1 className="text-4xl font-heading text-primary">
-            Kelvin’s Portfolio
-          </h1>
 
-          <button
-            onClick={() => setDarkMode(prev => !prev)}
-            className="
-              px-4 py-2 text-sm font-medium
-              text-white bg-primary rounded shadow
-              hover:bg-primary/90
-              dark:bg-secondary dark:text-black
-              dark:hover:bg-secondary/90
-              transition
-            "
-          >
-            {darkMode ? 'Light Mode' : 'Dark Mode'}
-          </button>
-        </header>
+        {/* NAVIGATION */}
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
-        <main className="max-w-4xl mx-auto p-6 space-y-16">
-          <About />
-          <Projects />
-          <Resume />
-          <Contact />
+        {/* PAGE CONTENT */}
+        <main className="max-w-4xl mx-auto p-6 space-y-16 scroll-smooth">
+          <div id="about">
+            <About />
+          </div>
+
+          <div id="projects">
+            <Projects />
+          </div>
+
+          <div id="resume">
+            <Resume />
+          </div>
+
+          <div id="contact">
+            <Contact />
+          </div>
         </main>
 
-        <footer className="
-          text-center p-4 text-sm
-          text-text-light/70 dark:text-text-dark/70
-        ">
-          &copy; Kelvin {new Date().getFullYear()}
-        </footer>
+        {/* FOOTER */}
+        <Footer />
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
