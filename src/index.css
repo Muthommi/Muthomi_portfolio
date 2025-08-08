@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom design */
+:root {
+  --color-primary: #2D9CDB;
+  --color-secondary: #56CCF2;
+  --color-bg-light: #F2F2F2;
+  --color-bg-dark: #18181B;
+  --color-text-light: #333333;
+  --color-text0-dark: #E5E7EB;
+  --radius-default: 0.5rem;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+  }
+  body.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+  }
+}
