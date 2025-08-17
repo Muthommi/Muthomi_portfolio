@@ -15,16 +15,64 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold mb-4">Projects</h2>
-      <div className="space-y-4">
-        {projects.map((project, idx) => (
-	  <div key={idx} className="border p-4 rounded dark:border-gray-700">
-	    <h3 className="text-xl font-bold">{project.title}</h3>
-	    <p>{project.description}</p>
-	    <p className="text-sm text-gray-500">Tech: {project.tech.join(', ')}</p>
-	    <a href={project.link} className="text-blue-underline" target="_blank" rel="noreferrer">
-	      View on GitHub
+    <section
+      id="projects"
+      className="space-y-6"
+    >
+      <h2 className="text-3xl font-heading text-primary mb-4 border-l-4 border-primary pl-3">
+	Projects
+      </h2>
+
+      <div className="grid md:grid-cols-2 gap-6">
+	{projectList.map((project, idx) => (
+	  <div
+            key={idx}
+            className="
+	      p-6
+	      bg-bg-light dark:bg-bg-dark
+	      border border-gray-200 dark:border=gray-800
+	      rounded-lg shadow hover:shadow-md
+	      transition
+	    "
+	  >
+	    <h3 className="text-2xl font-semibold mb-2">
+	      {project.title}
+	    </h3>
+
+	    <p className="mb-4">
+
+	    <div className="mb-4"
+	      {project.tech.map((techItem) => (
+	        <span
+		  key={techItem}
+		  className="
+		    inline-block
+		    bg-primary/10 text-primary
+		    text-sm font-medium
+		    px-2 py-1
+		    rounded-full
+		    mr-2
+		  "
+		>
+	          {techItem}
+	        </span>
+	      ))}
+	    </div>
+
+	    <a
+	      href={project.link}
+	      target="_blank"
+	      rel="noopener noreferrer"
+	      className="
+		inline-block
+		bg-primary text-white
+		px-4 py-2
+		rounded
+		hover:bg-primary/90
+		transition
+	      "
+	    >
+	      View on Github
 	    </a>
 	  </div>
 	))}
