@@ -64,7 +64,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
           </li>
         </ul>
         
-        {/* Keep your theme toggle if you want both light/dark modes */}
+        {/* I should work on my themes since they do not work */}
         <ThemeToggle
           darkMode={darkMode}
           toggleDarkMode={() => setDarkMode(prev => !prev)}

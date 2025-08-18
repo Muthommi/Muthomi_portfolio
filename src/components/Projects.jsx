@@ -1,60 +1,69 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
+const projectList = [
+  {
+    title: "SokoFresh",
+    description: "A comprehensive platform that bridges the gap between rural farmers and urban markets through a robust RESTful API. This solution addresses food distribution challenges while empowering farmers with direct market access.",
+    tech: ["Python", "REST API", "Database Design"],
+    link: "https://github.com/Tinayo001/sokofreshh.git",
+    demoLink: "#" // No demos yet
+  },
+  {
+    title: "JIJENGE Budget Tracker",
+    description: "An intuitive financial management application that helps users take control of their finances through smart budget planning and expense tracking. Features real-time analytics and personalized insights.",
+    tech: ["Python", "Data Analytics", "User Experience"],
+    link: "https://github.com/Muthommi/JIJENGE-Budget-tracker.git",
+    demoLink: "#" // No demos yet
+  }
+];
 
-export default function Contact() {
+export default function Projects() {
   return (
-    <section id="contact" className="fade-in">
-      <h2 className="section-title">Let's Connect</h2>
-      <div className="contact-container">
-        <h3 style={{ marginBottom: '1rem', color: 'var(--primary-color)' }}>
-          Ready to collaborate?
-        </h3>
-        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-          I'm always excited to discuss new opportunities and interesting projects. Let's build something amazing together!
-        </p>
-        
-        <div className="contact-links">
-          <a
-            href="mailto:muthommi@example.com" // Replace with your actual email
-            className="contact-link"
-            aria-label="Email"
-          >
-            <FaEnvelope />
-            Email
-          </a>
-          
-          <a
-            href="https://www.linkedin.com/in/martin-kelvin-muthomi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-            aria-label="LinkedIn profile"
-          >
-            <FaLinkedin />
-            LinkedIn
-          </a>
-          
-          <a
-            href="https://github.com/Muthommi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-            aria-label="Github profile"
-          >
-            <FaGithub />
-            GitHub
-          </a>
-          
-          <a
-            href="https://twitter.com/yourhandle" // Replace with your Twitter handle
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-link"
-            aria-label="Twitter profile"
-          >
-            <FaTwitter />
-            Twitter
-          </a>
-        </div>
+    <section id="projects" className="fade-in">
+      <h2 className="section-title">Featured Projects</h2>
+      <div className="projects-grid">
+        {projectList.map((project) => (
+          <div key={project.title} className="project-card">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            
+            <div className="project-tech">
+              {project.tech.join(" • ")}
+            </div>
+            
+            <div className="project-links">
+              {project.demoLink && project.demoLink !== "#" && (
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-link"
+                >
+                  🚀 Live Demo
+                </a>
+              )}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-link"
+              >
+                📄 View Code
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Resume section */}
+      <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+        <a 
+          href="/Kelvin_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="project-link" 
+          style={{ padding: '1rem 2rem', fontSize: '1.1rem' }}
+        >
+          📄 Download Resume
+        </a>
       </div>
     </section>
   );
