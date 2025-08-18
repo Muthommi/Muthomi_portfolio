@@ -33,7 +33,7 @@ export default function Contact() {
 	</a>
 
 	<a
-	  href="https:www.linkedin.com/in/martin-kelvin-muthomi"
+	  href="https://www.linkedin.com/in/martin-kelvin-muthomi"
 	  target="_blank"
 	  rel="noopener noreferrer"
 	  aria-label="LinkedIn profile"

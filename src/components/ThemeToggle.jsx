@@ -8,9 +8,9 @@ export default function ThemeToggle({ darkMode, toggleDarkMode }) {
       className="
         p-2 rounded
 	text-white bg-primary
-	hover: bg-primary/90
-	dark: bg-secondary dark:text-black
-	dark: hover: bg-secondary/90
+	hover:bg-primary/90
+	dark:bg-secondary dark:text-black
+	dark:hover:bg-secondary/90
 	transition
       "
     >

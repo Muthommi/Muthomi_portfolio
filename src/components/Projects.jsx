@@ -24,9 +24,9 @@ export default function Projects() {
       </h2>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {projectList.map((project, idx) => (
+        {projectList.map((project) => (
           <div
-            key={idx}
+            key={project.title}
             className="
               p-6
               bg-bg-light dark:bg-bg-dark

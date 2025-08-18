@@ -6,7 +6,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
       className="
         flex items-center justify-between
 	p-6 border-b border-primary
-	dark: border-secondary
+	dark:border-secondary
 	"
       >
         <h1 className="text-4xl font-heading text-primary">
