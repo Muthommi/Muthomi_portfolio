@@ -1,81 +1,60 @@
-const projectList = [
-  {
-    title: "SokoFresh",
-    description: "Connects rural farmers with urban markets via a RESTful API.",
-    tech: ["Python"],
-    link: "https://github.com/Tinayo001/sokofreshh.git"
-  },
-  {
-    title: "JIJENGE Budget Tracker",
-    description: "Helps users plan budgets and track expenses with ease.",
-    tech: ["Python"],
-    link: "https://github.com/Muthommi/JIJENGE-Budget-tracker.git"
-  }
-];
+import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
 
-export default function Projects() {
+export default function Contact() {
   return (
-    <section
-      id="projects"
-      className="space-y-6"
-    >
-      <h2 className="text-3xl font-heading text-primary mb-4 border-l-4 border-primary pl-3">
-        Projects
-      </h2>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        {projectList.map((project) => (
-          <div
-            key={project.title}
-            className="
-              p-6
-              bg-bg-light dark:bg-bg-dark
-              border border-gray-200 dark:border-gray-800
-              rounded-lg shadow hover:shadow-md
-              transition
-            "
+    <section id="contact" className="fade-in">
+      <h2 className="section-title">Let's Connect</h2>
+      <div className="contact-container">
+        <h3 style={{ marginBottom: '1rem', color: 'var(--primary-color)' }}>
+          Ready to collaborate?
+        </h3>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+          I'm always excited to discuss new opportunities and interesting projects. Let's build something amazing together!
+        </p>
+        
+        <div className="contact-links">
+          <a
+            href="mailto:muthommi@example.com" // Replace with your actual email
+            className="contact-link"
+            aria-label="Email"
           >
-            <h3 className="text-2xl font-semibold mb-2">
-              {project.title}
-            </h3>
-
-            <p className="mb-4">{project.description}</p>
-
-            <div className="mb-4">
-              {project.tech.map((techItem) => (
-                <span
-                  key={techItem}
-                  className="
-                    inline-block
-                    bg-primary/10 text-primary
-                    text-sm font-medium
-                    px-2 py-1
-                    rounded-full
-                    mr-2
-                  "
-                >
-                  {techItem}
-                </span>
-              ))}
-            </div>
-
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                inline-block
-                bg-primary text-white
-                px-4 py-2
-                rounded
-                hover:bg-primary/90
-                transition
-              "
-            >
-              View on GitHub
-            </a>
-          </div>
-        ))}
+            <FaEnvelope />
+            Email
+          </a>
+          
+          <a
+            href="https://www.linkedin.com/in/martin-kelvin-muthomi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            aria-label="LinkedIn profile"
+          >
+            <FaLinkedin />
+            LinkedIn
+          </a>
+          
+          <a
+            href="https://github.com/Muthommi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            aria-label="Github profile"
+          >
+            <FaGithub />
+            GitHub
+          </a>
+          
+          <a
+            href="https://twitter.com/yourhandle" // Replace with your Twitter handle
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            aria-label="Twitter profile"
+          >
+            <FaTwitter />
+            Twitter
+          </a>
+        </div>
       </div>
     </section>
   );
